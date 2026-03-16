@@ -18,11 +18,11 @@ export default function HomePage() {
 
         <div className="relative z-10 flex min-h-screen items-center justify-center px-6 text-center">
           <div className="mx-auto flex max-w-5xl flex-col items-center">
-            <h1 className="max-w-4xl text-5xl font-extrabold uppercase leading-none text-white md:text-7xl xl:text-5xl">
+            <h1 className="max-w-4xl text-4xl font-extrabold uppercase leading-none text-white md:text-7xl xl:text-5xl">
               Join our community and help define it.
             </h1>
 
-            <p className="mt-12 max-w-6xl text-lg font-bold uppercase leading-loose text-white md:text-2xl">
+            <p className="mt-12 max-w-6xl text-md  uppercase leading-loose text-white md:text-2xl">
               Explore a collaborative culture of inclusion, growth, and
               originality, supported by resources that make a difference in the
               car community.
@@ -30,7 +30,7 @@ export default function HomePage() {
 
             <Link
               href="/about"
-              className="mt-10 inline-flex rounded-full bg-white px-10 py-5 text-lg font-bold uppercase text-black transition-all duration-300 hover:scale-105 hover:bg-chart-2 hover:text-white"
+              className="mt-10 inline-flex rounded-full bg-white px-3 py-3 text-sm md:px-10 md:py-5 md:text-lg font-bold uppercase text-black transition-all duration-300 hover:scale-105 hover:bg-chart-2 hover:text-white"
             >
               Learn More About Us
             </Link>

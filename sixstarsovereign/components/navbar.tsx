@@ -10,6 +10,7 @@ import {
   SheetContent,
   SheetTrigger,
   SheetClose,
+  SheetTitle,
 } from "@/components/ui/sheet";
 
 const drugsther = localFont({
@@ -32,25 +33,31 @@ const navLinks = [
 export default function Navbar() {
   return (
     <header className="absolute top-0 left-0 z-50 w-full">
-      <div className="mx-auto flex w-full max-w-8xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-3">
+      <div className="mx-auto grid w-full max-w-8xl grid-cols-[auto_1fr_auto] items-center px-4 py-4 sm:px-6 lg:px-8">
+        {/* Brand */}
+        <Link href="/" className="inline-flex w-fit items-center gap-3">
           <Image
             src="/logo.png"
             alt="Six Star Sovereigns logo"
             width={70}
             height={70}
-            className="h-10 w-10 object-contain sm:h-30 sm:w-30"
+            className="h-20 w-20 object-contain sm:h-24 sm:w-24"
             priority
           />
           <span
-            className={`${drugsther.className} text-lg tracking-[0.08em] text-white sm:text-2xl lg:text-4xl`}
+            className={`${drugsther.className} block leading-[0.9] tracking-[0.08em] text-white text-2xl sm:text-2xl lg:text-4xl`}
           >
-            Six Star Sovereigns
+            Six Star
+            <br className="md:hidden"/>
+            Sovereigns
           </span>
         </Link>
 
+        {/* Spacer */}
+        <div />
+
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6 lg:flex">
+        <nav className="hidden items-center gap-6 justify-self-end lg:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -63,7 +70,7 @@ export default function Navbar() {
         </nav>
 
         {/* Mobile Menu */}
-        <div className="lg:hidden md:hidden">
+        <div className="justify-self-end lg:hidden">
           <Sheet>
             <SheetTrigger asChild>
               <Button
@@ -75,18 +82,20 @@ export default function Navbar() {
               </Button>
             </SheetTrigger>
 
+            
             <SheetContent
               side="right"
-              className="border-white/10 bg-black/95 text-white px-6"
+              className="border-white/10 bg-black/95 px-6 text-white"
             >
-              <div className="mt-10 flex flex-col gap-6">
-                <Link href="/" className="mb-4 flex items-center gap-3">
+              <SheetTitle/>
+              <div className="mt-2 flex flex-col gap-6">
+                <Link href="/" className="inline-flex w-fit items-center gap-3">
                   <Image
                     src="/logo.png"
                     alt="Six Star Sovereigns logo"
                     width={40}
                     height={40}
-                    className="h-10 w-10 object-contain"
+                    className="h-20 w-20 object-contain"
                   />
                   <span
                     className={`${drugsther.className} text-xl tracking-[0.08em] text-white`}
@@ -99,9 +108,9 @@ export default function Navbar() {
                   <SheetClose asChild key={link.href}>
                     <Link
                       href={link.href}
-                      className={`${roboto.className} text-2xl font-bold text-white ease-transition-colors duration-300 hover:text-chart-2 hover:scale-105`}
+                      className={`${roboto.className} text-xl text-white duration-300 hover:scale-105 hover:text-chart-2`}
                     >
-                      {link.label}  
+                      {link.label}
                     </Link>
                   </SheetClose>
                 ))}
