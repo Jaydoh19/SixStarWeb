@@ -47,9 +47,7 @@ export default function Navbar() {
           <span
             className={`${drugsther.className} block leading-[0.9] tracking-[0.08em] text-white text-2xl sm:text-2xl lg:text-4xl`}
           >
-            Six Star
-            <br className="md:hidden"/>
-            Sovereigns
+            Six Star Sovereigns
           </span>
         </Link>
 

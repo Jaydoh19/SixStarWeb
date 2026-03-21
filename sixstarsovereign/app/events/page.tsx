@@ -1,0 +1,158 @@
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import Image from "next/image";
+
+const upcomingEvents = [
+  {
+    title: "Cider Mill Meet",
+    date: "April 12, 2026",
+    time: "7:00 PM",
+    location: "Endicott, NY",
+    description:
+      "A casual night meet for members and new enthusiasts to connect, show builds, and enjoy the community.",
+    image: "/cider-mill.jpg",
+    address: "The Cider Mill, 2 Nanticoke Ave, Endicott, NY 13760",
+  },
+];
+
+export default function EventsPage() {
+  return (
+    <main className="bg-black text-white">
+      {/* Hero */}
+      <section className="relative flex min-h-[50vh] items-center justify-center overflow-hidden px-4 py-24 text-center sm:px-6 md:px-8">
+        <div className="absolute inset-0 bg-black/70" />
+        <div className="relative z-10 mx-auto max-w-4xl">
+          <h1 className="text-4xl font-extrabold uppercase sm:text-5xl md:text-6xl lg:text-7xl">
+            Upcoming Events
+          </h1>
+          <p className="mt-6 text-base leading-relaxed text-zinc-300 sm:text-lg md:text-xl">
+            Stay connected with upcoming meets, cruises, and community events
+            from Six Star Sovereigns.
+          </p>
+        </div>
+      </section>
+
+      {/* Event Cards */}
+      <section className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 md:px-8 md:py-20">
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+          {upcomingEvents.map((event) => (
+            <article
+              key={`${event.title}-${event.date}`}
+              className="overflow-hidden rounded-2xl border border-white/10 bg-zinc-950 shadow-xl"
+            >
+              <div className="relative h-64 w-full overflow-hidden">
+                <Image
+                  src={event.image}
+                  alt={event.title}
+                  fill
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/25" />
+              </div>
+
+              <div className="p-6">
+                <p className="text-sm font-semibold uppercase tracking-wide text-zinc-400">
+                  {event.date} • {event.time}
+                </p>
+
+                <h2 className="mt-3 text-2xl font-bold uppercase">
+                  {event.title}
+                </h2>
+
+                <p className="mt-3 text-sm font-medium uppercase tracking-wide text-zinc-400">
+                  {event.location}
+                </p>
+
+                <p className="mt-5 text-base leading-relaxed text-zinc-300">
+                  {event.description}
+                </p>
+
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button className="mt-6 rounded-full border border-white/20 px-5 py-3 text-sm font-bold uppercase text-white transition-all duration-300 hover:bg-white hover:text-black">
+                      Learn More
+                    </Button>
+                  </DialogTrigger>
+
+                  <DialogContent className="max-h-[90vh] overflow-y-auto border-white/10 bg-zinc-950 text-white sm:max-w-2xl">
+                    <div className="relative h-64 w-full  overflow-hidden rounded-xl sm:h-80 mt-5">
+                      <Image
+                        src={event.image}
+                        alt={event.title}
+                        fill
+                        className="object-cover object-[center_75%]"
+                      />
+                    </div>
+
+                    <DialogHeader className="pt-4">
+                      <DialogTitle className="text-2xl font-extrabold uppercase sm:text-3xl">
+                        {event.title}
+                      </DialogTitle>
+                      <DialogDescription className="text-zinc-400">
+                        Full event details and information.
+                      </DialogDescription>
+                    </DialogHeader>
+
+                    <div className="grid gap-4 sm:grid-cols-2">
+                      <div className="rounded-xl border border-white/10 bg-black/40 p-4">
+                        <p className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500">
+                          Date
+                        </p>
+                        <p className="mt-2 text-base font-semibold text-white">
+                          {event.date}
+                        </p>
+                      </div>
+
+                      <div className="rounded-xl border border-white/10 bg-black/40 p-4">
+                        <p className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500">
+                          Time
+                        </p>
+                        <p className="mt-2 text-base font-semibold text-white">
+                          {event.time}
+                        </p>
+                      </div>
+
+                      <div className="rounded-xl border border-white/10 bg-black/40 p-4 sm:col-span-2">
+                        <p className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500">
+                          Location
+                        </p>
+                        <p className="mt-2 text-base font-semibold text-white">
+                          {event.location}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-wrap gap-3 pt-2">
+                      <Button className="rounded-full cursor-pointer bg-white px-6 py-3 font-bold uppercase text-black hover:bg-zinc-200">
+                        <a
+                          href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.address)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Directions
+                        </a>
+                      </Button>
+                      <Button
+                        variant="outline"
+                        className="rounded-full cursor-pointer border-white/20 bg-transparent px-6 py-3 font-bold uppercase text-white hover:bg-white hover:text-black"
+                      >
+                        Share Event
+                      </Button>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    </main>
+  );
+}
