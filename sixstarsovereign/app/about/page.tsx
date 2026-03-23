@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function AboutPage() {
   return (
-    <main className="flex flex-col justify-center  text-white md:mt-28">
+    <main className="flex flex-col justify-center  text-white md:mt-28 mb-20">
       <section className="mx-auto mt-24 w-full max-w-6xl px-4 py-16 text-center sm:px-6 sm:py-20 md:px-8 md:py-24">
         <div className="mx-auto max-w-6xl">
           <div className="mb-8 flex flex-col items-center justify-center sm:mb-10">

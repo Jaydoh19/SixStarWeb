@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Cider Mill Meet",
+    "date": "April 12, 2026",
+    "time": "7:00 PM",
+    "location": "Endicott, NY",
+    "address": "The Cider Mill, 2 Nanticoke Ave, Endicott, NY 13760",
+    "description": "A casual night meet for members and new enthusiasts to connect, show builds, and enjoy the community.",
+    "image": "/cider-mill.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Sunday Cruise",
+    "date": "April 21, 2026",
+    "time": "9:00 AM",
+    "location": "Endicott, NY",
+    "address": "Endicott, NY",
+    "description": "A morning cruise with scenic routes, photo stops, and a relaxed group atmosphere for all members.",
+    "image": "/images/shark.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Community Showcase",
+    "date": "May 4, 2026",
+    "time": "6:30 PM",
+    "location": "Endicott, NY",
+    "address": "Endicott, NY",
+    "description": "An event dedicated to featured builds, community networking, and celebrating the culture behind Six Star Sovereigns.",
+    "image": "/cider-mill.jpg"
+  }
+]

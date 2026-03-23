@@ -8,19 +8,10 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import Image from "next/image";
+import ShareEventButton from "@/components/sharebutton";
+import { getEvents } from "@/lib/events";
 
-const upcomingEvents = [
-  {
-    title: "Cider Mill Meet",
-    date: "April 12, 2026",
-    time: "7:00 PM",
-    location: "Endicott, NY",
-    description:
-      "A casual night meet for members and new enthusiasts to connect, show builds, and enjoy the community.",
-    image: "/cider-mill.jpg",
-    address: "The Cider Mill, 2 Nanticoke Ave, Endicott, NY 13760",
-  },
-];
+const upcomingEvents = getEvents();
 
 export default function EventsPage() {
   return (
@@ -76,7 +67,7 @@ export default function EventsPage() {
 
                 <Dialog>
                   <DialogTrigger asChild>
-                    <Button className="mt-6 rounded-full border border-white/20 px-5 py-3 text-sm font-bold uppercase text-white transition-all duration-300 hover:bg-white hover:text-black">
+                    <Button className="mt-6 cursor-pointer rounded-full border border-white/20 px-5 py-3 text-sm font-bold uppercase text-white transition-all duration-300 hover:bg-white hover:text-black">
                       Learn More
                     </Button>
                   </DialogTrigger>
@@ -139,12 +130,13 @@ export default function EventsPage() {
                           Directions
                         </a>
                       </Button>
-                      <Button
-                        variant="outline"
-                        className="rounded-full cursor-pointer border-white/20 bg-transparent px-6 py-3 font-bold uppercase text-white hover:bg-white hover:text-black"
-                      >
-                        Share Event
-                      </Button>
+                      <ShareEventButton
+                        title={event.title}
+                        date={event.date}
+                        time={event.time}
+                        location={event.location}
+                        address={event.address}
+                      />
                     </div>
                   </DialogContent>
                 </Dialog>
