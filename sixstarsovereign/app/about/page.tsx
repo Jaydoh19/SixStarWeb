@@ -14,8 +14,7 @@ export default function AboutPage() {
 
           <div className="flex flex-col items-center justify-center gap-8 lg:flex-row lg:items-center lg:gap-12">
             <p className="max-w-xl text-base leading-relaxed text-zinc-300 sm:text-lg md:text-xl">
-              Six Star Sovereigns is a car community built on passion,
-              originality, and bringing enthusiasts together.
+              Established in 2025 and built on the principles of the Subaru love promise; The Six Star Sovereigns was formed by three Subaru loyalists who seek to give back to the community and become more than an average car club.
             </p>
 
             <div className="flex flex-col items-center gap-3">
@@ -53,8 +52,7 @@ export default function AboutPage() {
                 Our Vision
               </h2>
               <p className="max-w-xl text-base leading-relaxed text-zinc-300 sm:text-lg md:text-xl">
-                Six Star Sovereigns is a car community built on passion,
-                originality, and bringing enthusiasts together.
+                To build a recognized and respected car community where passion, creativity, and individuality come together creating a space where enthusiasts can connect, grow, and represent something bigger than themselves.
               </p>
               <div className="my-4 h-px w-full bg-white/10" />
             </div>
@@ -66,8 +64,7 @@ export default function AboutPage() {
                 Mission
               </h2>
               <p className="max-w-xl text-base leading-relaxed text-zinc-300 sm:text-lg md:text-xl">
-                Six Star Sovereigns is a car community built on passion,
-                originality, and bringing enthusiasts together.
+                To bring car enthusiasts together through meets, cruises, and shared experiences, while fostering a culture of respect, originality, and unity within the automotive community.
               </p>
               <div className="my-4 h-px w-full bg-white/10" />
             </div>
