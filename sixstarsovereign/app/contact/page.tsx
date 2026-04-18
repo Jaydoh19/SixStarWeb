@@ -29,7 +29,7 @@ export default function ContactPage() {
       <section className="flex min-h-[40vh] items-center justify-center px-6 text-center">
         <div>
           <h1 className="text-4xl font-extrabold uppercase md:text-6xl">
-            Contact
+            Socials
           </h1>
           <p className="mt-4 text-zinc-400">
             Connect with Six Star Sovereigns and the founders.
