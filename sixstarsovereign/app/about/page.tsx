@@ -12,9 +12,14 @@ export default function AboutPage() {
             <div className="my-3 h-px w-2/3 bg-white/10 sm:w-1/2" />
           </div>
 
+          <div className="mb-10">
+            <p className="text-white/40">
+              {`"To be the swords of opportunity and cultivate change"`}
+            </p>
+          </div>
           <div className="flex flex-col items-center justify-center gap-8 lg:flex-row lg:items-center lg:gap-12">
             <p className="max-w-xl text-base leading-relaxed text-zinc-300 sm:text-lg md:text-xl">
-              Established in 2025 and built on the principles of the Subaru love promise; The Six Star Sovereigns was formed by three Subaru loyalists who seek to give back to the community and become more than an average car club.
+              Established in 2025 and built on the principles of the Subaru love. The Six Star Sovereigns was formed by three Subaru loyalists who seek to give back to the community and become more than an average car club.
             </p>
 
             <div className="flex flex-col items-center gap-3">
