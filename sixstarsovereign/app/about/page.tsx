@@ -19,17 +19,57 @@ export default function AboutPage() {
           </div>
           <div className="flex flex-col items-center justify-center gap-8 lg:flex-row lg:items-center lg:gap-12">
             <p className="max-w-xl text-base leading-relaxed text-zinc-300 sm:text-lg md:text-xl">
-              Established in 2025 and built on the principles of the Subaru love. The Six Star Sovereigns was formed by three Subaru loyalists who seek to give back to the community and become more than an average car club.
+              Established in 2025 and built on the principles of the Subaru
+              love. The Six Star Sovereigns was formed by three Subaru loyalists
+              who seek to give back to the community and become more than an
+              average car club.
             </p>
 
-            <div className="flex flex-col items-center gap-3">
-              <Image
-                src="/cider-mill.jpg"
-                alt="Six Star Sovereigns lineup"
-                width={700}
-                height={700}
-                className="w-full max-w-70 rounded-lg object-cover shadow-xl sm:max-w-96 md:max-w-md"
-              />
+            <div className="flex flex-col items-center gap-6">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+                {/* Mike */}
+                <div className="flex flex-col items-center">
+                  <div className="w-1/2 sm:w-full max-w-100 sm:max-w-none aspect-3/4 overflow-hidden">
+                    <Image
+                      src="/mike.jpg"
+                      alt="Mike"
+                      width={400}
+                      height={500}
+                      className="w-full h-full object-cover shadow-xl"
+                    />
+                  </div>
+                  <p className="mt-2 text-lg font-semibold">{"Mike"}</p>
+                </div>
+
+                {/* Mel */}
+                <div className="flex flex-col items-center">
+                  <div className="w-1/2 sm:w-full max-w-100 sm:max-w-none aspect-3/4 overflow-hidden">
+                    <Image
+                      src="/jamel.webp"
+                      alt="Mel"
+                      width={400}
+                      height={500}
+                      className="w-full h-full object-cover shadow-xl"
+                    />
+                  </div>
+                  <p className="mt-2 text-lg font-semibold">{"Mel"}</p>
+                </div>
+
+                {/* Andrew */}
+                <div className="flex flex-col items-center">
+                  <div className="w-1/2 sm:w-full max-w-100 sm:max-w-none aspect-3/4 overflow-hidden">
+                    <Image
+                      src="/andrew.jpg"
+                      alt="Andrew"
+                      width={400}
+                      height={500}
+                      className="w-full h-full object-cover shadow-xl"
+                    />
+                  </div>
+                  <p className="mt-2 text-lg font-semibold">Andrew</p>
+                </div>
+              </div>
+
               <p className="text-xl font-semibold sm:text-2xl">The Founders</p>
             </div>
           </div>
@@ -57,7 +97,10 @@ export default function AboutPage() {
                 Our Vision
               </h2>
               <p className="max-w-xl text-base leading-relaxed text-zinc-300 sm:text-lg md:text-xl">
-                To build a recognized and respected car community where passion, creativity, and individuality come together creating a space where enthusiasts can connect, grow, and represent something bigger than themselves.
+                To build a recognized and respected car community where passion,
+                creativity, and individuality come together creating a space
+                where enthusiasts can connect, grow, and represent something
+                bigger than themselves.
               </p>
               <div className="my-4 h-px w-full bg-white/10" />
             </div>
@@ -69,7 +112,9 @@ export default function AboutPage() {
                 Mission
               </h2>
               <p className="max-w-xl text-base leading-relaxed text-zinc-300 sm:text-lg md:text-xl">
-                To bring car enthusiasts together through meets, cruises, and shared experiences, while fostering a culture of respect, originality, and unity within the automotive community.
+                To bring car enthusiasts together through meets, cruises, and
+                shared experiences, while fostering a culture of respect,
+                originality, and unity within the automotive community.
               </p>
               <div className="my-4 h-px w-full bg-white/10" />
             </div>

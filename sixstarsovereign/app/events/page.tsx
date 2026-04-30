@@ -31,12 +31,12 @@ export default function EventsPage() {
       </section>
 
       {/* Event Cards */}
-      <section className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 md:px-8 md:py-20">
-        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+      <section className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 md:px-8 md:py-10 mt-[-50]">
+        <div className="flex gap-6 overflow-x-auto pb-4 no-scrollbar md:grid md:grid-cols-2 xl:grid-cols-3 md:overflow-visible md:pb-0">
           {upcomingEvents.map((event) => (
             <article
               key={`${event.title}-${event.date}`}
-              className="overflow-hidden rounded-2xl border border-white/10 bg-zinc-950 shadow-xl"
+              className="min-w-[85%] sm:min-w-[70%] md:min-w-0 overflow-hidden rounded-2xl border border-white/10 bg-zinc-950 shadow-xl"
             >
               <div className="relative h-64 w-full overflow-hidden">
                 <Image

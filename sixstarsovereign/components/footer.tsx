@@ -17,8 +17,7 @@ const footerLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/events", label: "Events" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/contact", label: "Contact" },
+  { href: "/contact", label: "Socials" },
 ];
 
 export default function Footer() {

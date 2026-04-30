@@ -8,5 +8,25 @@
     "address": "The Cider Mill, 2 Nanticoke Ave, Endicott, NY 13760",
     "description": "Join us for the world's largest Subaru enthusiast event! Experience a day filled with thrilling car showcases, exciting activities, and a vibrant community of Subaru lovers. Come meet the team!",
     "image": "/images/wickedbigmeet.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Wicked Big Meet",
+    "date": "June 7th, 2026",
+    "time": "9am - 5pm",
+    "location": "Stafford Springs, CT",
+    "address": "The Cider Mill, 2 Nanticoke Ave, Endicott, NY 13760",
+    "description": "Join us for the world's largest Subaru enthusiast event! Experience a day filled with thrilling car showcases, exciting activities, and a vibrant community of Subaru lovers. Come meet the team!",
+    "image": "/images/wickedbigmeet.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Wicked Big Meet",
+    "date": "June 7th, 2026",
+    "time": "9am - 5pm",
+    "location": "Stafford Springs, CT",
+    "address": "The Cider Mill, 2 Nanticoke Ave, Endicott, NY 13760",
+    "description": "Join us for the world's largest Subaru enthusiast event! Experience a day filled with thrilling car showcases, exciting activities, and a vibrant community of Subaru lovers. Come meet the team!",
+    "image": "/images/wickedbigmeet.jpg"
   }
 ]
