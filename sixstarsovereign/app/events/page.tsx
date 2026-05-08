@@ -10,6 +10,7 @@ import {
 import Image from "next/image";
 import ShareEventButton from "@/components/sharebutton";
 import { getEvents } from "@/lib/events";
+import FadeIn from "@/components/fade-in";
 
 const upcomingEvents = getEvents();
 
@@ -32,6 +33,7 @@ export default function EventsPage() {
 
       {/* Event Cards */}
       <section className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 md:px-8 md:py-10 mt-[-50]">
+        <FadeIn delay={0.2}>
         <div className="flex gap-6 overflow-x-auto pb-4 no-scrollbar md:grid md:grid-cols-2 xl:grid-cols-3 md:overflow-visible md:pb-0">
           {upcomingEvents.map((event) => (
             <article
@@ -144,6 +146,7 @@ export default function EventsPage() {
             </article>
           ))}
         </div>
+        </FadeIn>
       </section>
     </main>
   );
