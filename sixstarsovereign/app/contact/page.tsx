@@ -22,6 +22,27 @@ const founders = [
   },
 ];
 
+const mediaTeam = [
+  {
+    id: 1,
+    name: "Bri",
+    instagram: "https://www.instagram.com/itsbuchi.png/",
+    instahandle: "@itsbuchi.png",
+  },
+  {
+    id: 2,
+    name: "Bryan",
+    instagram: "https://www.instagram.com/x_nam3less_x/",
+    instahandle: "@x_nam3less_x",
+  },
+  {
+    id: 3,
+    name: "Jayden",
+    instagram: "https://www.instagram.com/jay.blunt19/",
+    instahandle: "@jay.blunt19",
+  }
+]
+
 export default function ContactPage() {
   return (
     <main className="bg-black text-white">
@@ -78,6 +99,34 @@ export default function ContactPage() {
               >
                 <Instagram size={20} />
                 {founder.instahandle}
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 py-16">
+        <h2 className="text-2xl font-bold uppercase mb-10 text-center">
+          Media Team
+        </h2>
+
+        <div className="grid gap-8 sm:grid-cols-3">
+          {mediaTeam.map((member) => (
+            <div
+              key={member.id}
+              className="flex flex-col items-center gap-4 border border-white/10 p-6 text-center"
+            >
+              <h3 className="text-xl font-bold uppercase">
+                {member.name}
+              </h3>
+
+              <Link
+                href={member.instagram}
+                target="_blank"
+                className="flex items-center gap-2 text-zinc-300 hover:text-white transition"
+              >
+                <Instagram size={20} />
+                {member.instahandle}
               </Link>
             </div>
           ))}

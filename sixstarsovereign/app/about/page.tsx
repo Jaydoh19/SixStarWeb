@@ -1,5 +1,10 @@
 import Image from "next/image";
 import FadeIn from "@/components/fade-in";
+import localFont from "next/font/local";
+
+const drugsther = localFont({
+  src: "../fonts/Drugsther.otf",
+});
 
 export default function AboutPage() {
   return (
@@ -37,6 +42,12 @@ export default function AboutPage() {
 
             <FadeIn delay={0.6} className="w-full">
               <div className="flex flex-col items-center gap-6">
+                <p
+                  className={`text-xl
+              sm:text-2xl tracking-[0.08em] ${drugsther.className}`}
+                >
+                  The Founders
+                </p>
                 <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-3">
                   {[
                     { name: "Mike", src: "/mike.jpg", alt: "Mike" },
@@ -62,10 +73,6 @@ export default function AboutPage() {
                     </div>
                   ))}
                 </div>
-
-                <p className="text-xl font-semibold sm:text-2xl">
-                  The Founders
-                </p>
               </div>
             </FadeIn>
           </div>
