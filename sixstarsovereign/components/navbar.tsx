@@ -25,10 +25,15 @@ const roboto = Roboto({
 });
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/events", label: "Events" },
-  { href: "/contact", label: "Socials" },
+  { href: "/", label: "Home", external: false },
+  { href: "/about", label: "About", external: false },
+  { href: "/events", label: "Events", external: false },
+  { href: "/contact", label: "Socials", external: false },
+  {
+    href: "https://bc-printed.square.site/shop/six-star-sovereigns/GOROJZLEHF5GVITVWHLRJYWH",
+    label: "Shop",
+    external: true,
+  },
 ];
 
 export default function Navbar() {
@@ -61,6 +66,8 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
+              target={link.external ? "_blank" : undefined}
+              rel={link.external ? "noopener noreferrer" : undefined}
               className={`${roboto.className} inline-block text-lg font-bold text-white transition-all duration-300 ease-out hover:scale-110 hover:text-chart-2`}
             >
               {link.label}
@@ -81,12 +88,11 @@ export default function Navbar() {
               </Button>
             </SheetTrigger>
 
-            
             <SheetContent
               side="right"
               className="border-white/10 bg-black/95 px-6 text-white"
             >
-              <SheetTitle/>
+              <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
               <div className="mt-2 flex flex-col gap-6">
                 <Link href="/" className="inline-flex w-fit items-center gap-3">
                   <Image
@@ -107,6 +113,8 @@ export default function Navbar() {
                   <SheetClose asChild key={link.href}>
                     <Link
                       href={link.href}
+                      target={link.external ? "_blank" : undefined}
+                      rel={link.external ? "noopener noreferrer" : undefined}
                       className={`${roboto.className} text-xl text-white duration-300 hover:scale-105 hover:text-chart-2`}
                     >
                       {link.label}

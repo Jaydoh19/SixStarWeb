@@ -14,10 +14,15 @@ const roboto = Roboto({
 });
 
 const footerLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/events", label: "Events" },
-  { href: "/contact", label: "Socials" },
+  { href: "/", label: "Home", external: false },
+  { href: "/about", label: "About", external: false },
+  { href: "/events", label: "Events", external: false },
+  { href: "/contact", label: "Socials", external: false },
+  {
+    href: "https://bc-printed.square.site/shop/six-star-sovereigns/GOROJZLEHF5GVITVWHLRJYWH",
+    label: "Shop",
+    external: true,
+  },
 ];
 
 export default function Footer() {
@@ -59,6 +64,8 @@ export default function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noopener noreferrer" : undefined}
                   className={`${roboto.className} text-sm text-zinc-400 transition-colors duration-300 hover:text-white`}
                 >
                   {link.label}
@@ -68,30 +75,31 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className={`${roboto.className} text-lg font-bold`}>
-              Contact
-            </h3>
+            <h3 className={`${roboto.className} text-lg font-bold`}>Contact</h3>
 
             <div className="mt-4 flex flex-col gap-4">
               <div className="flex items-center gap-3 text-zinc-400">
                 <Mail className="h-4 w-4" />
                 <span className={`${roboto.className} text-sm`}>
-                  contact@sixstarsovereigns.com
+                  Sixstarsovereigns@outlook.com
                 </span>
               </div>
 
               <div className="flex items-center gap-3 text-zinc-400">
                 <Instagram className="h-4 w-4" />
-                <a href="https://www.instagram.com/sixstarsovereigns/"className={`${roboto.className} text-sm`} target="_blank">
+                <a
+                  href="https://www.instagram.com/sixstarsovereigns/"
+                  className={`${roboto.className} text-sm`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   @sixstarsovereigns
                 </a>
               </div>
 
               <div className="flex items-center gap-3 text-zinc-400">
                 <MapPin className="h-4 w-4" />
-                <span className={`${roboto.className} text-sm`}>
-                  New York
-                </span>
+                <span className={`${roboto.className} text-sm`}>New York</span>
               </div>
             </div>
           </div>
