@@ -34,118 +34,121 @@ export default function EventsPage() {
       {/* Event Cards */}
       <section className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 md:px-8 md:py-10 mt-[-50]">
         <FadeIn delay={0.2}>
-        <div className="flex gap-6 overflow-x-auto pb-4 no-scrollbar md:grid md:grid-cols-2 xl:grid-cols-3 md:overflow-visible md:pb-0">
-          {upcomingEvents.map((event) => (
-            <article
-              key={`${event.id}-${event.date}`}
-              className="min-w-[85%] sm:min-w-[70%] md:min-w-0 overflow-hidden rounded-2xl border border-white/10 bg-zinc-950 shadow-xl"
-            >
-              <div className="relative h-64 w-full overflow-hidden">
-                <Image
-                  src={event.image}
-                  alt={event.title}
-                  fill
-                  className="object-cover transition-transform duration-500 hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/25" />
-              </div>
+          <div className="flex gap-6 overflow-x-auto pb-4 no-scrollbar md:grid md:grid-cols-2 xl:grid-cols-3 md:overflow-visible md:pb-0">
+            {upcomingEvents.map((event) => (
+              <article
+                key={`${event.id}-${event.date}`}
+                className="min-w-[85%] sm:min-w-[70%] md:min-w-0 overflow-hidden rounded-2xl border border-white/10 bg-zinc-950 shadow-xl"
+              >
+                <div className="relative h-64 w-full overflow-hidden">
+                  <Image
+                    src={event.image}
+                    alt={event.title}
+                    fill
+                    priority={event.id === 1}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/25" />
+                </div>
 
-              <div className="p-6">
-                <p className="text-sm font-semibold uppercase tracking-wide text-zinc-400">
-                  {event.date} • {event.time}
-                </p>
+                <div className="p-6">
+                  <p className="text-sm font-semibold uppercase tracking-wide text-zinc-400">
+                    {event.date} • {event.time}
+                  </p>
 
-                <h2 className="mt-3 text-2xl font-bold uppercase">
-                  {event.title}
-                </h2>
+                  <h2 className="mt-3 text-2xl font-bold uppercase">
+                    {event.title}
+                  </h2>
 
-                <p className="mt-3 text-sm font-medium uppercase tracking-wide text-zinc-400">
-                  {event.location}
-                </p>
+                  <p className="mt-3 text-sm font-medium uppercase tracking-wide text-zinc-400">
+                    {event.location}
+                  </p>
 
-                <p className="mt-5 text-base leading-relaxed text-zinc-300">
-                  {event.description}
-                </p>
+                  <p className="mt-5 text-base leading-relaxed text-zinc-300">
+                    {event.description}
+                  </p>
 
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button className="mt-6 cursor-pointer rounded-full border border-white/20 px-5 py-3 text-sm font-bold uppercase text-white transition-all duration-300 hover:bg-white hover:text-black">
-                      Learn More
-                    </Button>
-                  </DialogTrigger>
-
-                  <DialogContent className="max-h-[90vh] overflow-y-auto border-white/10 bg-zinc-950 text-white sm:max-w-2xl">
-                    <div className="relative h-64 w-full  overflow-hidden rounded-xl sm:h-80 mt-5">
-                      <Image
-                        src={event.image}
-                        alt={event.title}
-                        fill
-                        className="object-cover object-[center_75%]"
-                      />
-                    </div>
-
-                    <DialogHeader className="pt-4">
-                      <DialogTitle className="text-2xl font-extrabold uppercase sm:text-3xl">
-                        {event.title}
-                      </DialogTitle>
-                      <DialogDescription className="text-zinc-400">
-                        Full event details and information.
-                      </DialogDescription>
-                    </DialogHeader>
-
-                    <div className="grid gap-4 sm:grid-cols-2">
-                      <div className="rounded-xl border border-white/10 bg-black/40 p-4">
-                        <p className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500">
-                          Date
-                        </p>
-                        <p className="mt-2 text-base font-semibold text-white">
-                          {event.date}
-                        </p>
-                      </div>
-
-                      <div className="rounded-xl border border-white/10 bg-black/40 p-4">
-                        <p className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500">
-                          Time
-                        </p>
-                        <p className="mt-2 text-base font-semibold text-white">
-                          {event.time}
-                        </p>
-                      </div>
-
-                      <div className="rounded-xl border border-white/10 bg-black/40 p-4 sm:col-span-2">
-                        <p className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500">
-                          Location
-                        </p>
-                        <p className="mt-2 text-base font-semibold text-white">
-                          {event.location}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex flex-wrap gap-3 pt-2">
-                      <Button className="rounded-full cursor-pointer bg-white px-6 py-3 font-bold uppercase text-black hover:bg-zinc-200">
-                        <a
-                          href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.address)}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Directions
-                        </a>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button className="mt-6 cursor-pointer rounded-full border border-white/20 px-5 py-3 text-sm font-bold uppercase text-white transition-all duration-300 hover:bg-white hover:text-black">
+                        Learn More
                       </Button>
-                      <ShareEventButton
-                        title={event.title}
-                        date={event.date}
-                        time={event.time}
-                        location={event.location}
-                        address={event.address}
-                      />
-                    </div>
-                  </DialogContent>
-                </Dialog>
-              </div>
-            </article>
-          ))}
-        </div>
+                    </DialogTrigger>
+
+                    <DialogContent className="max-h-[90vh] overflow-y-auto border-white/10 bg-zinc-950 text-white sm:max-w-2xl">
+                      <div className="relative h-64 w-full  overflow-hidden rounded-xl sm:h-80 mt-5">
+                        <Image
+                          src={event.image}
+                          alt={event.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          className="object-cover transition-transform duration-500 hover:scale-105"
+                        />
+                      </div>
+
+                      <DialogHeader className="pt-4">
+                        <DialogTitle className="text-2xl font-extrabold uppercase sm:text-3xl">
+                          {event.title}
+                        </DialogTitle>
+                        <DialogDescription className="text-zinc-400">
+                          Full event details and information.
+                        </DialogDescription>
+                      </DialogHeader>
+
+                      <div className="grid gap-4 sm:grid-cols-2">
+                        <div className="rounded-xl border border-white/10 bg-black/40 p-4">
+                          <p className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500">
+                            Date
+                          </p>
+                          <p className="mt-2 text-base font-semibold text-white">
+                            {event.date}
+                          </p>
+                        </div>
+
+                        <div className="rounded-xl border border-white/10 bg-black/40 p-4">
+                          <p className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500">
+                            Time
+                          </p>
+                          <p className="mt-2 text-base font-semibold text-white">
+                            {event.time}
+                          </p>
+                        </div>
+
+                        <div className="rounded-xl border border-white/10 bg-black/40 p-4 sm:col-span-2">
+                          <p className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500">
+                            Location
+                          </p>
+                          <p className="mt-2 text-base font-semibold text-white">
+                            {event.location}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-wrap gap-3 pt-2">
+                        <Button className="rounded-full cursor-pointer bg-white px-6 py-3 font-bold uppercase text-black hover:bg-zinc-200">
+                          <a
+                            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.address)}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Directions
+                          </a>
+                        </Button>
+                        <ShareEventButton
+                          title={event.title}
+                          date={event.date}
+                          time={event.time}
+                          location={event.location}
+                          address={event.address}
+                        />
+                      </div>
+                    </DialogContent>
+                  </Dialog>
+                </div>
+              </article>
+            ))}
+          </div>
         </FadeIn>
       </section>
     </main>
