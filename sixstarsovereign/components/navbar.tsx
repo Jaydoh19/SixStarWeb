@@ -29,6 +29,7 @@ const navLinks = [
   { href: "/about", label: "About", external: false },
   { href: "/events", label: "Events", external: false },
   { href: "/contact", label: "Socials", external: false },
+  { href: "/gallery", label: "Gallery", external: false },
   {
     href: "https://bc-printed.square.site/shop/six-star-sovereigns/GOROJZLEHF5GVITVWHLRJYWH",
     label: "Shop",
