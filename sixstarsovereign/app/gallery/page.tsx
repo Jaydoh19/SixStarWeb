@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getMedia } from "@/lib/get-media";
 import FadeIn from "@/components/fade-in";
+export const dynamic = "force-dynamic";
 
 export default async function GalleryPage() {
   const media = await getMedia();

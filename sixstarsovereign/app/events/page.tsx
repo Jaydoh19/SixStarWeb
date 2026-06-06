@@ -11,6 +11,8 @@ import Image from "next/image";
 import ShareEventButton from "@/components/sharebutton";
 import FadeIn from "@/components/fade-in";
 import { getEvents } from "@/lib/get-events";
+export const dynamic = "force-dynamic";
+
 
 export default async function EventsPage() {
   const upcomingEvents = await getEvents();
