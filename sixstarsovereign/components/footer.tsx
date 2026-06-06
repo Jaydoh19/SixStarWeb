@@ -5,7 +5,7 @@ import { Roboto } from "next/font/google";
 import { Instagram, Mail, MapPin } from "lucide-react";
 
 const drugsther = localFont({
-  src: "../app/fonts/drugsther.otf",
+  src: "../app/fonts/Drugsther.otf",
 });
 
 const roboto = Roboto({

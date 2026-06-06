@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/sheet";
 
 const drugsther = localFont({
-  src: "../app/fonts/drugsther.otf",
+  src: "../app/fonts/Drugsther.otf",
 });
 
 const roboto = Roboto({
